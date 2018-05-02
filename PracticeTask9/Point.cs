@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 namespace PracticeTask9
 {
     // Class of the list elements.
-    class Point<T>
+    class Point
     {
         // Value.
-        public T Value { get; set; }
+        public int Value { get; set; }
 
         // The next element.
-        public Point<T> Next { get; set; }
+        public Point Next { get; set; }
 
         // Constructor.
-        public Point(T Value)
+        public Point(int Value)
         {
             this.Value = Value;
             this.Next = null;
