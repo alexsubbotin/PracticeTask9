@@ -64,19 +64,42 @@ namespace PracticeTask9
         }
 
         // Search method.
-        public Point SearchElem(int value, Point head, Point tail)
+        public Point SearchElem(int value, Point curr, Point tail)
         {
-            if (head.Value == value || (head.Value == tail.Value && head.Next == tail.Next))
+            // If found or it's the end of the list.
+            if (curr.Value == value || (curr.Value == tail.Value && curr.Next == tail.Next))
             {
-                if (head.Value == value)
-                    return head;
+                // If found then return it else create an empty object.
+                if (curr.Value == value)
+                    return curr;
                 else
                     return new Point(0);
             }
             else
             {
-                Point wanted = SearchElem(value, head.Next, tail);
+                // Check the next.
+                Point wanted = SearchElem(value, curr.Next, tail);
                 return wanted;
+            }
+        }
+
+        // Delete method.
+        public Point DeleteElem(int value, Point prev, Point curr, Point tail)
+        {
+            // If found or it's the end of the list.
+            if (curr.Value == value || (curr.Value == tail.Value && curr.Next == tail.Next))
+            {
+                // If found then delete it.
+                if (curr.Value == value)
+                    prev.Next = curr.Next;
+
+                return tail;
+            }
+            else
+            {
+                // Checking the next.
+                Point deleted = DeleteElem(value, prev.Next, curr.Next, tail);
+                return deleted;
             }
         }
 
