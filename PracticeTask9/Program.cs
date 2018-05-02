@@ -14,15 +14,31 @@ namespace PracticeTask9
         static void Main(string[] args)
         {
             // Getting the N.
-            Console.Write("Enter the N: ");
-            int N = Convert.ToInt32(Console.ReadLine());
+            int N = GetN();
 
             // Creating the list.
+            Console.WriteLine("Created list:");
             CircularList circularList = new CircularList();
             circularList.CreateCircularList(N);
             circularList.Show();
 
             Console.ReadLine();
+        }
+
+        // Method to get the N.
+        public static int GetN()
+        {
+            int N;
+            bool ok;
+            do
+            {
+                Console.Write("Enter the N: ");
+                ok = Int32.TryParse(Console.ReadLine(), out N);
+                if (!ok || N < 2)
+                    Console.WriteLine("Input error! N shoud be a natural number greater than 1");
+            } while (!ok || N < 2);
+
+            return N;
         }
     }
 }
