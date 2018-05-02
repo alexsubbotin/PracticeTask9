@@ -22,6 +22,13 @@ namespace PracticeTask9
             circularList.CreateCircularList(N);
             circularList.Show();
 
+            int value = GetWantedValue();
+            Point wanted = circularList.SearchElem(value, circularList.Head, circularList.Tail);
+            if (wanted.Next == null)
+                Console.WriteLine("There is no element with the wanted value!");
+            else
+                Console.WriteLine("The element with the wanted value: {0}\nThe next: {1}", wanted.Value, wanted.Next.Value);
+
             Console.ReadLine();
         }
 
@@ -39,6 +46,22 @@ namespace PracticeTask9
             } while (!ok || N < 2);
 
             return N;
+        }
+
+        // Method to get the wanted value.
+        public static int GetWantedValue()
+        {
+            int value;
+            bool ok;
+            do
+            {
+                Console.Write("Enter the wanted value: ");
+                ok = Int32.TryParse(Console.ReadLine(), out value);
+                if (!ok)
+                    Console.WriteLine("Input error! Value shoud be an ineger");
+            } while (!ok);
+
+            return value;
         }
     }
 }
