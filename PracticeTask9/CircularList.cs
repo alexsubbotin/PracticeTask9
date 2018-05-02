@@ -10,10 +10,10 @@ namespace PracticeTask9
     class CircularList
     {
         // The head of the list.
-        Point Head { get; set; }
+        public Point Head { get; set; }
 
         // The tail of the list.
-        Point Tail { get; set; }
+        public Point Tail { get; set; }
 
         // Constructor without parameters.
         public CircularList()
@@ -74,7 +74,7 @@ namespace PracticeTask9
             }
             else
             {
-                Point wanted = SearchElem(value, head.Next);
+                Point wanted = SearchElem(value, head.Next, tail);
                 return wanted;
             }
         }
