@@ -62,6 +62,23 @@ namespace PracticeTask9
             }
         }
 
+        // Search method.
+        public Point SearchElem(int value, Point head, Point tail)
+        {
+            if (head.Value == value || head == tail)
+            {
+                if (head.Value == value)
+                    return head;
+                else
+                    return new Point(0);
+            }
+            else
+            {
+                Point wanted = SearchElem(value, head.Next);
+                return wanted;
+            }
+        }
+
         // Method to show the list.
         public void Show()
         {
