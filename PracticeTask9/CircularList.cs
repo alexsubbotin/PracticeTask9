@@ -15,6 +15,13 @@ namespace PracticeTask9
         // The tail of the list.
         Point Tail { get; set; }
 
+        // Constructor without parameters.
+        public CircularList()
+        {
+            Head = null;
+            Tail = null;
+        }
+
         // Method to create a circular list of N elements.
         public static Point CreateCircularList(int N, Point current)
         {
