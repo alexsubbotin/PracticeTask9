@@ -38,6 +38,7 @@ namespace PracticeTask9
             Add(N - 1, head, tail);
 
             this.Head = tail.Next;
+            this.Tail = tail;
         }
 
         // Method to add elements (is used in creating the list).
@@ -65,7 +66,7 @@ namespace PracticeTask9
         // Search method.
         public Point SearchElem(int value, Point head, Point tail)
         {
-            if (head.Value == value || head == tail)
+            if (head.Value == value || (head.Value == tail.Value && head.Next == tail.Next))
             {
                 if (head.Value == value)
                     return head;
