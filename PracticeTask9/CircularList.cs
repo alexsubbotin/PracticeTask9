@@ -92,6 +92,8 @@ namespace PracticeTask9
                 // If found then delete it.
                 if (curr.Value == value)
                     prev.Next = curr.Next;
+                else
+                    Console.WriteLine("There is no element with the wanted value!");
 
                 return tail;
             }
@@ -99,7 +101,9 @@ namespace PracticeTask9
             {
                 // Checking the next.
                 Point deleted = DeleteElem(value, prev.Next, curr.Next, tail);
-                return deleted;
+
+                // Returning the head.
+                return deleted.Next;
             }
         }
 
