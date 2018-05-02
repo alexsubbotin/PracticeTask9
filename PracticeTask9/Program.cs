@@ -17,10 +17,11 @@ namespace PracticeTask9
             int N = GetN();
 
             // Creating the list.
-            Console.WriteLine("Created list:");
+            Console.Write("Created list: ");
             CircularList circularList = new CircularList();
             circularList.CreateCircularList(N);
             circularList.Show();
+            Console.WriteLine();
 
             int value = GetWantedValue();
             Point wanted = circularList.SearchElem(value, circularList.Head, circularList.Tail);

@@ -21,21 +21,5 @@ namespace PracticeTask9
             this.Value = Value;
             this.Next = null;
         }
-
-        //public static bool operator ==(Point a, Point b)
-        //{
-        //    if (a.Value == b.Value && a.Next == b.Next)
-        //        return true;
-        //    else
-        //        return false;
-        //}
-
-        //public static bool operator !=(Point a, Point b)
-        //{
-        //    if (a.Value != b.Value && a.Next != b.Next)
-        //        return true;
-        //    else
-        //        return false;
-        //}
     }
 }
