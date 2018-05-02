@@ -44,7 +44,7 @@ namespace PracticeTask9
         public static void Add(int N, Point head, Point tail)
         {
             // If N = 0 then it's the end of the list.
-            if (N == 0)
+            if (N == 1)
             {
                 return;
             }
@@ -60,6 +60,17 @@ namespace PracticeTask9
                 // Continue adding but moving the head to the next element.
                 Add(N - 1, buf, tail);
             }
+        }
+
+        // Method to show the list.
+        public void Show()
+        {
+            Point current = this.Head;
+            do
+            {
+                Console.Write(current.Value + " ");
+                current = current.Next;
+            } while (current != this.Head);
         }
     }
 }
