@@ -30,21 +30,29 @@ namespace PracticeTask9
 
             Add(N - 1, head, tail);
 
-            return head;
+            // Returning the head.
+            return tail.Next;
         }
 
+        // Method to add elements (is used in creating the list).
         public static void Add(int N, Point head, Point tail)
         {
+            // If N = 0 then it's the end of the list.
             if (N == 0)
             {
                 return;
             }
             else
             {
+                // Creating a temporary element with the N value.
                 Point buf = new Point(N);
+
+                // Adding between the head and the tail.
                 head.Next = buf;
                 buf.Next = tail;
-                Add(N - 1, head, tail);
+
+                // Continue adding but moving the head to the next element.
+                Add(N - 1, buf, tail);
             }
         }
     }
