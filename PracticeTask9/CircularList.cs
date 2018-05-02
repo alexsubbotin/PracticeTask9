@@ -23,7 +23,7 @@ namespace PracticeTask9
         }
 
         // Method to create a circular list of N elements.
-        public static Point CreateCircularList(int N, Point current)
+        public void CreateCircularList(int N)
         {
             // Creating the head of the list.
             Point head = new Point(N);
@@ -37,8 +37,7 @@ namespace PracticeTask9
 
             Add(N - 1, head, tail);
 
-            // Returning the head.
-            return tail.Next;
+            this.Head = tail.Next;
         }
 
         // Method to add elements (is used in creating the list).
