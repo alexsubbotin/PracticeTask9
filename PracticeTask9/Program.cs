@@ -30,6 +30,10 @@ namespace PracticeTask9
             else
                 Console.WriteLine("The element with the wanted value: {0}\nThe next: {1}", wanted.Value, wanted.Next.Value);
 
+            value = GetWantedValue();
+            circularList.Head = circularList.DeleteElem(value, circularList.Tail, circularList.Head, circularList.Tail);
+            circularList.Show();
+
             Console.ReadLine();
         }
 
